@@ -1,0 +1,2284 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Synyi Cockpit API",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/cockpit/concept-module": {
+      "get": {
+        "tags": [
+          "Concept"
+        ],
+        "summary": "获取图表的属性信息",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[Newtonsoft.Json.Linq.JObject[], Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[Newtonsoft.Json.Linq.JObject[], Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[Newtonsoft.Json.Linq.JObject[], Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed]]"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Concept"
+        ],
+        "summary": "创建图表的属性信息",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cockpit.Service.Dto.CreateConceptModuleInput"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cockpit.Service.Dto.CreateConceptModuleInput"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cockpit.Service.Dto.CreateConceptModuleInput"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cockpit.Service.Dto.CreateConceptModuleInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[Cockpit.Service.Dto.CreateConceptModuleOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[Cockpit.Service.Dto.CreateConceptModuleOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[Cockpit.Service.Dto.CreateConceptModuleOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/concept-module/refresh": {
+      "get": {
+        "tags": [
+          "Concept"
+        ],
+        "summary": "刷新图表信息",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/data-asset/basic": {
+      "get": {
+        "tags": [
+          "DataAsset"
+        ],
+        "summary": "知识资产基础数据",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetBasicInfoInfoOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetBasicInfoInfoOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetBasicInfoInfoOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/data-asset/emr": {
+      "get": {
+        "tags": [
+          "DataAsset"
+        ],
+        "summary": "结构化数据 - 文书 - 汇总",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetEmrOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetEmrOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetEmrOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/data-asset/emr-chart": {
+      "get": {
+        "tags": [
+          "DataAsset"
+        ],
+        "summary": "结构化数据 - 图表 - 汇总",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetEmrChartOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetEmrChartOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetEmrChartOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/data-asset/standard": {
+      "get": {
+        "tags": [
+          "DataAsset"
+        ],
+        "summary": "结构化数据-标准化",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetStandadOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetStandadOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetStandadOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/data-asset/recordstruct": {
+      "get": {
+        "tags": [
+          "DataAsset"
+        ],
+        "summary": "病历结构化治理展示",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetRecordStructOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetRecordStructOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetRecordStructOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/data-asset/textstructoverview": {
+      "get": {
+        "tags": [
+          "DataAsset"
+        ],
+        "summary": "文本结构化概览",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetTextStructOverViewOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetTextStructOverViewOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetTextStructOverViewOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/data-asset/textstructchart": {
+      "get": {
+        "tags": [
+          "DataAsset"
+        ],
+        "summary": "文本结构化处理展示",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetTextStructChartOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetTextStructChartOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetTextStructChartOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/data-asset/structdata": {
+      "get": {
+        "tags": [
+          "DataAsset"
+        ],
+        "summary": "结构化数据 - 文本类型/变量类型",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[GetStructDataOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[GetStructDataOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[GetStructDataOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/homepage/used-comparision": {
+      "get": {
+        "tags": [
+          "HomePage"
+        ],
+        "summary": "获取平台业务使用数据",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetBusinessUsedOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetBusinessUsedOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetBusinessUsedOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/homepage/basic-govern": {
+      "get": {
+        "tags": [
+          "HomePage"
+        ],
+        "summary": "获取平台基础治理数据",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetBasicGovernOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetBasicGovernOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetBasicGovernOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/homepage/depth-govern": {
+      "get": {
+        "tags": [
+          "HomePage"
+        ],
+        "summary": "获取平台深度治理数据",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetDeepthGovernOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetDeepthGovernOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetDeepthGovernOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/version": {
+      "get": {
+        "tags": [
+          "Info"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/cockpit/info/version": {
+      "get": {
+        "tags": [
+          "Info"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/health/ready": {
+      "get": {
+        "tags": [
+          "Info"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/health/alive": {
+      "get": {
+        "tags": [
+          "Info"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/health/ready": {
+      "get": {
+        "tags": [
+          "Info"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/health/alive": {
+      "get": {
+        "tags": [
+          "Info"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/cockpit/info/config": {
+      "get": {
+        "tags": [
+          "Info"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/knowledge-asset/var/trend": {
+      "get": {
+        "tags": [
+          "KnowledgeAsset"
+        ],
+        "summary": "统计指定日期范围内的变量总数趋势",
+        "parameters": [
+          {
+            "name": "startTime",
+            "in": "query",
+            "description": "开始日期（格式：yyyy/MM）",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endTime",
+            "in": "query",
+            "description": "结束日期（格式：yyyy/MM）",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetVariableTrendStatisticOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetVariableTrendStatisticOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetVariableTrendStatisticOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/knowledge-asset/var/pie": {
+      "get": {
+        "tags": [
+          "KnowledgeAsset"
+        ],
+        "summary": "统计变量饼图",
+        "parameters": [
+          {
+            "name": "startTime",
+            "in": "query",
+            "description": "开始日期（格式：yyyy/MM）",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endTime",
+            "in": "query",
+            "description": "结束日期（格式：yyyy/MM）",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetVariablePieStatisticOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetVariablePieStatisticOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetVariablePieStatisticOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/knowledge-asset/var/reference": {
+      "get": {
+        "tags": [
+          "KnowledgeAsset"
+        ],
+        "summary": "统计变量引用次数",
+        "parameters": [
+          {
+            "name": "startTime",
+            "in": "query",
+            "description": "开始日期（格式：yyyy/MM）",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endTime",
+            "in": "query",
+            "description": "结束日期（格式：yyyy/MM）",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetVariableReferenceStatisticOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetVariableReferenceStatisticOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetVariableReferenceStatisticOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/knowledge-asset/term/count": {
+      "get": {
+        "tags": [
+          "KnowledgeAsset"
+        ],
+        "summary": "统计术语数量",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetTermStatisticOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetTermStatisticOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetTermStatisticOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/knowledge-asset/nlp/note/qualitytest": {
+      "get": {
+        "tags": [
+          "KnowledgeAsset"
+        ],
+        "summary": "获取病历质检状态的饼图",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetNlpStatisticOutput`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.NameValue, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetNlpStatisticOutput`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.NameValue, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetNlpStatisticOutput`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.NameValue, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/knowledge-asset/nlp/goldStandard/count": {
+      "get": {
+        "tags": [
+          "KnowledgeAsset"
+        ],
+        "summary": "获取金标准query前10待审核和已审核的记录",
+        "parameters": [
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetNlpStatisticOutput`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.KnowledgeAsset.GetGoldStandardByAuditStatusOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetNlpStatisticOutput`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.KnowledgeAsset.GetGoldStandardByAuditStatusOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetNlpStatisticOutput`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.KnowledgeAsset.GetGoldStandardByAuditStatusOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/knowledge-asset/nlp/note/progress": {
+      "get": {
+        "tags": [
+          "KnowledgeAsset"
+        ],
+        "summary": "获取病历进度的饼图",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetNlpStatisticOutput`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.NameValue, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetNlpStatisticOutput`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.NameValue, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetNlpStatisticOutput`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.NameValue, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/knowledge-asset/nlp/project/progress": {
+      "get": {
+        "tags": [
+          "KnowledgeAsset"
+        ],
+        "summary": "获取项目进度的饼图",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetNlpStatisticOutput`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.NameValue, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetNlpStatisticOutput`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.NameValue, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetNlpStatisticOutput`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.NameValue, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/knowledge-asset/nlp/note": {
+      "get": {
+        "tags": [
+          "KnowledgeAsset"
+        ],
+        "summary": "按标签类型和层级统计病历",
+        "parameters": [
+          {
+            "name": "level",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "labelId",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetNoteQuantityStatisticOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetNoteQuantityStatisticOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetNoteQuantityStatisticOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/research-overview/activity": {
+      "get": {
+        "tags": [
+          "OverView"
+        ],
+        "summary": "近期活跃人数",
+        "parameters": [
+          {
+            "name": "startTime",
+            "in": "query",
+            "description": "开始时间",
+            "schema": {
+              "type": "datetime"
+            }
+          },
+          {
+            "name": "endTime",
+            "in": "query",
+            "description": "结束时间",
+            "schema": {
+              "type": "datetime"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetActivityOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetActivityOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetActivityOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/research-overview/department-rank": {
+      "get": {
+        "tags": [
+          "OverView"
+        ],
+        "summary": "部门排行",
+        "parameters": [
+          {
+            "name": "startTime",
+            "in": "query",
+            "description": "开始时间",
+            "schema": {
+              "type": "datetime"
+            }
+          },
+          {
+            "name": "endTime",
+            "in": "query",
+            "description": "结束时间",
+            "schema": {
+              "type": "datetime"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetDepartmentRankOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetDepartmentRankOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetDepartmentRankOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/research-overview/dataset": {
+      "get": {
+        "tags": [
+          "OverView"
+        ],
+        "summary": "搜索数据集统计",
+        "parameters": [
+          {
+            "name": "startTime",
+            "in": "query",
+            "description": "开始时间",
+            "schema": {
+              "type": "datetime"
+            }
+          },
+          {
+            "name": "endTime",
+            "in": "query",
+            "description": "结束时间",
+            "schema": {
+              "type": "datetime"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetDataSetOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetDataSetOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetDataSetOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/research-overview/collect-studys": {
+      "get": {
+        "tags": [
+          "OverView"
+        ],
+        "summary": "收藏夹和课题数",
+        "parameters": [
+          {
+            "name": "startTime",
+            "in": "query",
+            "description": "开始时间",
+            "schema": {
+              "type": "datetime"
+            }
+          },
+          {
+            "name": "endTime",
+            "in": "query",
+            "description": "结束时间",
+            "schema": {
+              "type": "datetime"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[GetCollectAndStudyOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[GetCollectAndStudyOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[GetCollectAndStudyOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/research-overview/query-export": {
+      "get": {
+        "tags": [
+          "OverView"
+        ],
+        "summary": "搜藏夹和课题前十统计",
+        "parameters": [
+          {
+            "name": "startTime",
+            "in": "query",
+            "description": "开始时间",
+            "schema": {
+              "type": "datetime"
+            }
+          },
+          {
+            "name": "endTime",
+            "in": "query",
+            "description": "结束时间",
+            "schema": {
+              "type": "datetime"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetQueryExportOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetQueryExportOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetQueryExportOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/research-overview/followup": {
+      "get": {
+        "tags": [
+          "OverView"
+        ],
+        "summary": "随访详情",
+        "parameters": [
+          {
+            "name": "startTime",
+            "in": "query",
+            "description": "开始时间",
+            "schema": {
+              "type": "datetime"
+            }
+          },
+          {
+            "name": "endTime",
+            "in": "query",
+            "description": "结束时间",
+            "schema": {
+              "type": "datetime"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetFollowUpOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetFollowUpOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetFollowUpOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/research-overview/pagelog": {
+      "get": {
+        "tags": [
+          "OverView"
+        ],
+        "summary": "页面浏览日志",
+        "parameters": [
+          {
+            "name": "dateformat",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "yyyy-MM-dd"
+            }
+          },
+          {
+            "name": "startTime",
+            "in": "query",
+            "description": "开始时间",
+            "schema": {
+              "type": "datetime"
+            }
+          },
+          {
+            "name": "endTime",
+            "in": "query",
+            "description": "结束时间",
+            "schema": {
+              "type": "datetime"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetPageLogOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetPageLogOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetPageLogOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cockpit/research-overview/data-clear": {
+      "get": {
+        "tags": [
+          "OverView"
+        ],
+        "summary": "数据清洗类型",
+        "parameters": [
+          {
+            "name": "startTime",
+            "in": "query",
+            "description": "开始时间",
+            "schema": {
+              "type": "datetime"
+            }
+          },
+          {
+            "name": "endTime",
+            "in": "query",
+            "description": "结束时间",
+            "schema": {
+              "type": "datetime"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetDataClearStatOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetDataClearStatOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetDataClearStatOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Cockpit.Service.Dto.CreateConceptModuleInput": {
+        "type": "object",
+        "properties": {
+          "collocate": {
+            "type": "string",
+            "nullable": true
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Cockpit.Service.Dto.CreateConceptModuleOutput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Cockpit.Service.Dto.GetActivityOutput": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Cockpit.Service.Dto.GetBasicGovernOutput": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Cockpit.Service.Dto.GetBusinessUsedOutput": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Cockpit.Service.Dto.GetDataClearStatOutput": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Cockpit.Service.Dto.GetDataSetOutput": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Cockpit.Service.Dto.GetDeepthGovernOutput": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Cockpit.Service.Dto.GetDepartmentRankOutput": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Cockpit.Service.Dto.GetFollowUpOutput": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Cockpit.Service.Dto.GetQueryExportOutput": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Cockpit.Service.Dto.IGetDataOutput": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "Cockpit.Service.Dto.KnowledgeAsset.GetNlpStatisticOutput`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.KnowledgeAsset.GetGoldStandardByAuditStatusOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false,
+        "description": "获取 NLP 相关统计结果"
+      },
+      "Cockpit.Service.Dto.KnowledgeAsset.GetNlpStatisticOutput`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.NameValue, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false,
+        "description": "获取 NLP 相关统计结果"
+      },
+      "Cockpit.Service.Dto.KnowledgeAsset.GetNoteQuantityStatisticOutput": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false,
+        "description": "获取病历统计出参"
+      },
+      "Cockpit.Service.Dto.KnowledgeAsset.GetTermStatisticOutput": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false,
+        "description": "获取术语相关统计结果"
+      },
+      "Cockpit.Service.Dto.KnowledgeAsset.GetVariablePieStatisticOutput": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false,
+        "description": "获取变量饼图统计结果"
+      },
+      "Cockpit.Service.Dto.KnowledgeAsset.GetVariableReferenceStatisticOutput": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false,
+        "description": "获取变量引用次数统计结果"
+      },
+      "Cockpit.Service.Dto.KnowledgeAsset.GetVariableTrendStatisticOutput": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false,
+        "description": "获取变量趋势图统计结果"
+      },
+      "GetBasicInfoInfoOutput": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetCollectAndStudyOutput": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetEmrChartOutput": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetEmrOutput": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetPageLogOutput": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetRecordStructOutput": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetStandadOutput": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetStructDataOutput": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetTextStructChartOutput": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetTextStructOverViewOutput": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "datas": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.IGetDataOutput"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[Cockpit.Service.Dto.CreateConceptModuleOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/Cockpit.Service.Dto.CreateConceptModuleOutput"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[GetStructDataOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/GetStructDataOutput"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[Newtonsoft.Json.Linq.JObject[], Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": { },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetNlpStatisticOutput`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.KnowledgeAsset.GetGoldStandardByAuditStatusOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cockpit.Service.Dto.KnowledgeAsset.GetNlpStatisticOutput`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.KnowledgeAsset.GetGoldStandardByAuditStatusOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetNlpStatisticOutput`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.NameValue, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cockpit.Service.Dto.KnowledgeAsset.GetNlpStatisticOutput`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.NameValue, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetNoteQuantityStatisticOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cockpit.Service.Dto.KnowledgeAsset.GetNoteQuantityStatisticOutput"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetTermStatisticOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cockpit.Service.Dto.KnowledgeAsset.GetTermStatisticOutput"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetVariablePieStatisticOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cockpit.Service.Dto.KnowledgeAsset.GetVariablePieStatisticOutput"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetVariableReferenceStatisticOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cockpit.Service.Dto.KnowledgeAsset.GetVariableReferenceStatisticOutput"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[Cockpit.Service.Dto.KnowledgeAsset.GetVariableTrendStatisticOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cockpit.Service.Dto.KnowledgeAsset.GetVariableTrendStatisticOutput"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetBasicInfoInfoOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetBasicInfoInfoOutput"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetEmrChartOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetEmrChartOutput"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetEmrOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetEmrOutput"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetPageLogOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetPageLogOutput"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetRecordStructOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetRecordStructOutput"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetStandadOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetStandadOutput"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetTextStructChartOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetTextStructChartOutput"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.IEnumerable`1[[GetTextStructOverViewOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetTextStructOverViewOutput"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetActivityOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cockpit.Service.Dto.GetActivityOutput"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetBasicGovernOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cockpit.Service.Dto.GetBasicGovernOutput"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetBusinessUsedOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cockpit.Service.Dto.GetBusinessUsedOutput"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetDataClearStatOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cockpit.Service.Dto.GetDataClearStatOutput"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetDataSetOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cockpit.Service.Dto.GetDataSetOutput"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetDeepthGovernOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cockpit.Service.Dto.GetDeepthGovernOutput"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetDepartmentRankOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cockpit.Service.Dto.GetDepartmentRankOutput"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetFollowUpOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cockpit.Service.Dto.GetFollowUpOutput"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[Cockpit.Service.Dto.GetQueryExportOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cockpit.Service.Dto.GetQueryExportOutput"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.Collections.Generic.List`1[[GetCollectAndStudyOutput, Cockpit.Service.Dto, Version=1.0.0.200, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetCollectAndStudyOutput"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.Result`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/RealData.Common.Contract.Common.ResultCodeType"
+          },
+          "msg": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealData.Common.Contract.Common.ResultCodeType": {
+        "enum": [
+          0,
+          400,
+          401,
+          403,
+          500,
+          700
+        ],
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "Example: \"Authorization: Bearer {token}\" 注意包含Bearer部分",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}

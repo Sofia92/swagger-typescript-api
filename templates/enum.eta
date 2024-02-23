@@ -1,0 +1,6 @@
+export enum <%= it.name %> {
+  <% it.properties.forEach((property)=> { %>
+    <%= property.key %> = <%= property.value %>, <%= property.str_desc %>
+
+  <% }) %>
+}

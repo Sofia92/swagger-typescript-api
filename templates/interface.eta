@@ -1,0 +1,8 @@
+<%= !!it.description? '// '+it.description.replace(/[\r\n]/g, '') :'' %>
+
+export interface <%= it.name %> {
+  <% it.properties.forEach((property)=> { %>
+    <%= property.key %>?: <%= !!property.refer?property.refer:'' %><%= property.str_type %>; <%= property.str_desc %>
+
+  <% }) %>
+}
