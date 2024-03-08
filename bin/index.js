@@ -1,7 +1,14 @@
 const http = require('http');
-const { SchemaRoutes } = require('./schema-routes');
-const { swaggerSchemaWalker } = require('./schema-walker');
+const converter = require('swagger2openapi');
+const { swaggerSchemaWalker } = require('./schema-walkers');
+const { CodeGenProcess } = require('./code-gen-process');
+const { SchemaComponentsMap } = require('./schema-components-map');
 const _ = require('lodash');
+const fs = require("fs");
+const path = require("path");
+const ts = require('typescript');
+const { Eta } = require("eta");
+const eta = new Eta({ views: path.join(__dirname, "../templates") })
 
 const envs = [
   { name: "platform", path: 'http://bank-web-4560-develop.sy/api/platform/swagger/v1/swagger.json' },
@@ -28,23 +35,28 @@ const envs = [
   {
     name: "collection",
     path: 'http://bank-web-4560-develop.sy/api/collection/swagger/collection/swagger.json'
-  },
-  {
-    name: "cockpit",
-    path: 'http://bank-web-4560-develop.sy/api/cockpit/swagger/cockpit/swagger.json'
   }
 ];
-const routesHandle = new SchemaRoutes();
-envs.forEach((env) => {
-  fetchSourceJSON(env)
-    .then(swagger => {
-      swaggerSchemaWalker(swagger.components.schemas, env.name);
-      routesHandle.init(swagger.paths, env.name);
-    })
-    .catch(error => {
-      console.log("Error: " + error);
-    });
-});
+const componentsHandle = new SchemaComponentsMap();
+
+const generator = new CodeGenProcess();
+
+(async () => {
+  const swaggerSchemas = await Promise.all(envs.map(env => fetchSourceJSON(env)));
+  generator.init(swaggerSchemas);
+})()
+
+// envs.forEach(async (env) => {
+//   try {
+//     const swaggerSchema = await fetchSourceJSON(env);
+//     generator.init(swaggerSchema);
+//   } catch (error) {
+//     console.log("Error: " + error);
+//   }
+
+//   // swaggerSchemaWalker(swagger.components.schemas, env.name);
+//   // routesHandle.init(swagger.paths, env.name);
+// });
 
 function fetchSourceJSON(env) {
   return new Promise((resolve, reject) => {
@@ -54,17 +66,9 @@ function fetchSourceJSON(env) {
 
       let res = '';
       response.on('end', () => {
-        const {
-          info: { title, version },
-          paths,
-          components
-        } = JSON.parse(res);
-        resolve({
-          title,
-          version,
-          paths,
-          components
-        });
+        const data = JSON.parse(res);
+        Object.assign(data.info, { env: env.name });
+        resolve(data);
       });
 
     }).on("error", (error) => {

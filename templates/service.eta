@@ -1,0 +1,23 @@
+/**
+ * 本文件通过脚本生成，请勿直接修改内部内容
+ */
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { <%= it.providers %> } from '@bank/domain-core';
+import {<%= it.refers %>} from './typings';
+
+@Injectable({ providedIn: 'root' })
+export class <%= it.name %> {
+ constructor(private <%= it.network %>: <%= it.providers %>) {}
+
+<% it.functions.forEach((item)=> { %>
+<%~ include("./description", { parameters: item.parameters, summary: item.summary }) %>
+public <%= item.name %> (<%~ include("./api-params", { parameters: item.parameters, method: item.method }) %>): Observable<<%= item.responses||'any' %>> {
+    <% if (item.method === 'post'||item.method === 'put') { %>
+  return this.<%= it.network %>.<%= item.method %>(`<%~ item.path %>`, params);
+  <% } else { %>
+  return this.<%= it.network %>.<%= item.method %>(`<%~ item.path %>`);
+  <% } %>
+  }
+<% }) %>
+} 

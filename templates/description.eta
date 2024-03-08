@@ -1,0 +1,14 @@
+<% if (it.parameters) { %>
+
+/**
+<% = !!it.summary?'* '+it.summary:'' %>
+
+<% it.parameters.forEach((param)=> { %>
+* @param {<% = !!param.type?param.type:'*' %>} <% = param.name %> <% = !!param.description?' - '+param.description:'' %>
+
+<% }) %>
+*/
+<% } else { %>
+    <%= !!it.summary?'// '+it.summary:'' %>
+
+<% } %>

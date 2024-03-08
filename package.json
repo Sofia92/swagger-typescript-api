@@ -4,15 +4,16 @@
   "description": "swagger to typescript definition",
   "main": "index.js",
   "scripts": {
-    "gen:swaggerApi": "node --nolazy bin/swaggerTypescriptApi.js",
-    "node": "node --nolazy bin/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gen:swaggerApi": "node bin/swaggerTypescriptApi.js",
+    "node": "node bin/index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "eta": "^3.2.0",
     "lodash": "^4.17.21",
-    "swagger-typescript-api": "^13.0.3"
+    "swagger-typescript-api": "^13.0.3",
+    "swagger2openapi": "^7.0.8",
+    "typescript": "^5.3.3"
   }
 }
