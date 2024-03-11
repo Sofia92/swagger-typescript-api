@@ -1,0 +1,41 @@
+{
+  "outputDir": "__generated__",
+  "schemasKey": "schemas",
+  "apiJsons": [
+    {
+          "name": "platform",
+          "path": "http://bank-web-4560-develop.sy/api/platform/swagger/v1/swagger.json",
+          "network": "PlatformNetworkService"
+    },
+    {
+          "name": "edc",
+          "path": "http://bank-web-4560-develop.sy/api/edc/swagger/v1/swagger.json",
+          "network": "EDCNetworkService"
+    },
+    {
+          "name": "ir",
+          "path": "http://bank-web-4560-develop.sy/api/ir/swagger/ir/swagger.json",
+          "network": "IRNetworkService"
+    },
+    {
+          "name": "search",
+          "path": "http://bank-web-4560-develop.sy/api/search/swagger/search/swagger.json",
+          "network": "SearchNetworkService"
+    },
+    {
+          "name": "stat",
+          "path": "http://bank-web-4560-develop.sy/api/stat/swagger/stat/swagger.json",
+          "network": "StatNetworkService"
+    },
+    {
+          "name": "dsr",
+          "path": "http://bank-web-4560-develop.sy/api/dsr/swagger/v1/swagger.json",
+          "network": "DiseaseResearchNetworkService"
+    },
+    {
+          "name": "collection",
+          "path": "http://bank-web-4560-develop.sy/api/collection/swagger/collection/swagger.json",
+          "network": "CollectionNetworkService"
+    }
+  ]
+}

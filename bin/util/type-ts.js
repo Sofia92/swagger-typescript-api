@@ -22,15 +22,6 @@ const typeToTs = {
   'System_Int32[]': 'number[]',
   'System_Object[]': 'any[]'
 }
-const network = {
-  'api/platform': 'PlatformNetworkService',
-  'api/edc': 'EDCNetworkService',
-  'api/ir': 'IRNetworkService',
-  'api/search': 'SearchNetworkService',
-  'api/stat': 'StatNetworkService',
-  'api/dsr': 'DiseaseResearchNetworkService',
-  'api/collection': 'CollectionNetworkService',
-}
 module.exports = {
-  typeToTs, network
+  typeToTs
 };

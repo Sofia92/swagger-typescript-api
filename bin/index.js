@@ -1,62 +1,21 @@
 const http = require('http');
-const converter = require('swagger2openapi');
-const { swaggerSchemaWalker } = require('./schema-walkers');
+const fs = require('fs');
+const path = require('path');
 const { CodeGenProcess } = require('./code-gen-process');
-const { SchemaComponentsMap } = require('./schema-components-map');
-const _ = require('lodash');
-const fs = require("fs");
-const path = require("path");
-const ts = require('typescript');
-const { Eta } = require("eta");
-const eta = new Eta({ views: path.join(__dirname, "../templates") })
 
-const envs = [
-  { name: "platform", path: 'http://bank-web-4560-develop.sy/api/platform/swagger/v1/swagger.json' },
-  {
-    name: "edc",
-    path: 'http://bank-web-4560-develop.sy/api/edc/swagger/v1/swagger.json'
-  },
-  {
-    name: "ir",
-    path: 'http://bank-web-4560-develop.sy/api/ir/swagger/ir/swagger.json'
-  },
-  {
-    name: "search",
-    path: 'http://bank-web-4560-develop.sy/api/search/swagger/search/swagger.json'
-  },
-  {
-    name: "stat",
-    path: 'http://bank-web-4560-develop.sy/api/stat/swagger/stat/swagger.json'
-  },
-  {
-    name: "dsr",
-    path: 'http://bank-web-4560-develop.sy/api/dsr/swagger/v1/swagger.json'
-  },
-  {
-    name: "collection",
-    path: 'http://bank-web-4560-develop.sy/api/collection/swagger/collection/swagger.json'
-  }
-];
-const componentsHandle = new SchemaComponentsMap();
+let codeGenConfig = fs.readFileSync(path.resolve('.swagger-api.config.json'), { encoding: 'utf8' });
+if (!codeGenConfig) {
+  console.error('项目根目录下未找到.swagger-api.config.json文件，请前往配置')
+  return;
+}
+codeGenConfig = JSON.parse(codeGenConfig);
 
-const generator = new CodeGenProcess();
+const generator = new CodeGenProcess(codeGenConfig);
 
 (async () => {
-  const swaggerSchemas = await Promise.all(envs.map(env => fetchSourceJSON(env)));
+  const swaggerSchemas = await Promise.all(codeGenConfig.apiJsons.map(env => fetchSourceJSON(env)));
   generator.init(swaggerSchemas);
 })()
-
-// envs.forEach(async (env) => {
-//   try {
-//     const swaggerSchema = await fetchSourceJSON(env);
-//     generator.init(swaggerSchema);
-//   } catch (error) {
-//     console.log("Error: " + error);
-//   }
-
-//   // swaggerSchemaWalker(swagger.components.schemas, env.name);
-//   // routesHandle.init(swagger.paths, env.name);
-// });
 
 function fetchSourceJSON(env) {
   return new Promise((resolve, reject) => {
@@ -67,7 +26,7 @@ function fetchSourceJSON(env) {
       let res = '';
       response.on('end', () => {
         const data = JSON.parse(res);
-        Object.assign(data.info, { env: env.name });
+        Object.assign(data.info, { name: env.name, network: env.network });
         resolve(data);
       });
 

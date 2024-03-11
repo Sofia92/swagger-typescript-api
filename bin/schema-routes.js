@@ -4,29 +4,33 @@ const fs = require('fs');
 const path = require('path');
 const { Eta } = require("eta");
 const eta = new Eta({ views: path.join(__dirname, "../templates") })
-const { typeToTs, network } = require("./util/type-ts");
+const { typeToTs } = require("./util/type-ts");
+const prettier = require("prettier");
 class SchemaRoutes {
+  codeGenConfig;
   env_api_Map = new Map();
   refers_Set = new Set();
   namespaceTree;
+  schemaComponentsMap;
   nameParser;
 
-  constructor() {
+  constructor(codeGenConfig) {
+    this.codeGenConfig = codeGenConfig;
     this.nameParser = new NameParser();
   }
 
 
-  setNameSpaceTree(namespaceTree) {
+  setNameSpaceTree(namespaceTree, schemaComponentsMap) {
     this.namespaceTree = namespaceTree;
+    this.schemaComponentsMap = schemaComponentsMap;
   }
-  init(paths, envName) {
-    const envContent = [];
+  async init(paths, env) {
+    const envContent = [], { name, network } = env;
     this.refers_Set.clear();
     _.forEach(paths, (path_detail, path_url) => {
-      // if (path_url.startsWith(`/api/${envName}`)) {
       _.forEach(path_detail, (content, method) => {
         const { parameters, responses, summary } = content;
-        const path = _.last(path_url.split(`/api/${envName}`));
+        const path = _.last(path_url.split(`/api/${name}`));
 
         const meta = {
           name: _.upperFirst(method + _.camelCase(path)),
@@ -41,7 +45,8 @@ class SchemaRoutes {
           parameters.forEach(param => {
             const type = _.get(param, ['schema', 'type']);
             const attr = {
-              ..._.pick(param, ['name', 'in', 'required', 'description']),
+              ..._.pick(param, ['name', 'in', 'required']),
+              description: _.camelCase(param.description),
               type: type ? typeToTs[type] : null
             }
             attr.required ? required.push(attr) : unRequired.push(attr);
@@ -60,29 +65,27 @@ class SchemaRoutes {
         }
 
         if (meta.responses) {
-          let normalizedRef = this.nameParser.parseComplexRef(_.last(this.nameParser.parseRef(meta.responses)));
-          const namesJoin = this.nameParser.replaceChactorRef(normalizedRef.split('.').join('_'));
-          meta.responses = typeToTs[this.nameParser.parseComplexRef(namesJoin)] || this.nameParser.parseComplexRef(namesJoin) || null;
+          let normalizedRef = this.schemaComponentsMap.parseComplexRef(_.last(this.nameParser.parseRef(meta.responses)));
+          const typings = this.schemaComponentsMap.get(normalizedRef);
+          meta.responses = typings?.name || null;
           this.refers_Set.add(meta.responses)
         }
         envContent.push(meta);
       })
-      // }
 
-      // fs
     });
-    this.env_api_Map.set(envName, envContent);
-    const providers = network[`api/${envName}`];
+    this.env_api_Map.set(name, envContent);
     const refers = [...this.refers_Set].filter(refer => !!this.namespaceTree[refer]);
-    fs.writeFileSync(`./__generated__/${envName}-api.service.ts`,
-      eta.render("./service", {
-        name: _.upperFirst(envName) + 'APIService',
-        functions: envContent,
-        refers: refers.join(','),
-        providers,
-        network: _.camelCase(providers)
-      }), 'utf-8');
+    const fileContent = eta.render("./service", {
+      name: _.upperFirst(name) + 'APIService',
+      functions: envContent,
+      refers: refers.join(','),
+      providers: network,
+      network: _.camelCase(network)
+    })
 
+    const file = await prettier.format(fileContent, { semi: false, parser: "typescript" });
+    fs.writeFileSync(`./${this.codeGenConfig.outputDir}/${name}-api.service.ts`, file, 'utf-8');
 
   }
 

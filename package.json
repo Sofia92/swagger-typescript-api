@@ -1,10 +1,9 @@
 {
-  "name": "swagger-typescript",
+  "name": "@bank/swagger-api",
   "version": "1.0.0",
   "description": "swagger to typescript definition",
   "main": "index.js",
   "scripts": {
-    "gen:swaggerApi": "node bin/swaggerTypescriptApi.js",
     "node": "node bin/index.js"
   },
   "author": "",
@@ -12,8 +11,9 @@
   "dependencies": {
     "eta": "^3.2.0",
     "lodash": "^4.17.21",
-    "swagger-typescript-api": "^13.0.3",
-    "swagger2openapi": "^7.0.8",
     "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "prettier": "3.2.5"
   }
 }
