@@ -14,7 +14,7 @@ export class <%= it.name %> {
 <%~ include("./description", { parameters: item.parameters, summary: item.summary }) %>
 public <%= item.name %> (<%~ include("./api-params", { parameters: item.parameters, method: item.method }) %>): Observable<<%= item.responses||'any' %>> {
     <% if (item.method === 'post'||item.method === 'put') { %>
-  return this.<%= it.network %>.<%= item.method %>(`<%~ item.path %>`, params);
+  return this.<%= it.network %>.<%= item.method %>(`<%~ item.path %>`<% = item?.hasRequestBody?', params':'' %>);
   <% } else { %>
   return this.<%= it.network %>.<%= item.method %>(`<%~ item.path %>`);
   <% } %>

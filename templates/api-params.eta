@@ -2,4 +2,4 @@
   <% it.parameters.forEach((param)=> { %>
   <% = param.name %><% = param.required?'':'?' %>: <% = !!param.type?param.type:'any' %>,
   <% }) %>
-<% } %> <%- if (it.method=='post'||it.method=='put') { %> params? <% } -%>
+<% } %>

@@ -1,10 +1,13 @@
 {
   "name": "@bank/swagger-api",
-  "version": "1.0.0",
+  "version": "1.0.1-rc.2",
   "description": "swagger to typescript definition",
   "main": "index.js",
+  "bin": {
+    "swagger-gen": "bin/index.js"
+  },
   "scripts": {
-    "node": "node bin/index.js"
+    "swagger-gen": "node bin/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +17,6 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "prettier": "3.2.5"
+    "prettier": "^3.2.5"
   }
 }
