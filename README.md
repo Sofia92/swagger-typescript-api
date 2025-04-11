@@ -55,7 +55,7 @@
 }
   ```
 
-![2执行](assets/2执行.mov)
+![2执行](assets/2.执行.gif)
 
 3. 更新启动脚本：
    
@@ -67,4 +67,4 @@
 
 4. service 文件内部使用
 
-![3使用.mov](assets/3使用.mov)
+![3使用.mov](assets/3.使用.gif)
